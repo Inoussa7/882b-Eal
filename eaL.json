@@ -1,0 +1,192 @@
+{
+  "proficiencyLevels": [
+    "Beginner",
+    "Elementary",
+    "Intermediate",
+    "Upper Intermediate",
+    "Advanced",
+    "Proficient"
+  ],
+  "learningStyles": {
+    "Visual": "Prefers visual aids like images and maps.",
+    "Auditory": "Learns best through listening and speaking.",
+    "ReadAndWrite": "Prefers learning through words, reading, and writing.",
+    "Kinesthetic": "Learns best through hands-on activities."
+  },
+  "languageLearningContent": {
+    "Travel": {
+      "Beginner": {
+        "WritingPrompt": "Write about your dream vacation. Where would you go? What would you see?",
+        "VocabularyExercise": "Learn and use basic travel-related words like 'plane,' 'train,' 'hotel,' 'beach,' 'mountain.'"
+      },
+      "Elementary": {
+        "WritingPrompt": "Describe a place you have visited. What did you do there? How did you feel?",
+        "VocabularyExercise": "Focus on simple past tense verbs related to travel activities and descriptive adjectives."
+      },
+      "Intermediate": {
+        "WritingPrompt": "Compare two cities or countries you know or have visited. What are the differences and similarities?",
+        "VocabularyExercise": "Use comparative and superlative forms, along with specific travel and cultural vocabulary."
+      },
+      "UpperIntermediate": {
+        "WritingPrompt": "Discuss the impact of tourism on a destination. Consider both positive and negative aspects.",
+        "VocabularyExercise": "Incorporate terminology related to economics and environmental science."
+      },
+      "Advanced": {
+        "WritingPrompt": "Analyze the role of technology in modern travel. How has it changed the way we plan and experience our travels?",
+        "VocabularyExercise": "Use tech-related vocabulary and persuasive language to argue a point."
+      },
+      "Proficient": {
+        "WritingPrompt": "Write a detailed proposal for a travel project that addresses a current issue in the travel industry.",
+        "VocabularyExercise": "Utilize specialized terms from fields like project management, marketing, and cultural studies."
+      }
+    }
+  },
+  "grammarLearningContent": {
+    "Tenses": {
+      "Beginner": {
+        "Explanation": "Present Simple vs. Present Continuous",
+        "Exercise": "Identify and use the correct tense in daily routines."
+      },
+      "Elementary": {
+        "Explanation": "Past Simple vs. Present Perfect",
+        "Exercise": "Write sentences about your last holiday using the correct tense."
+      },
+      "Intermediate": {
+        "Explanation": "Future Forms - will, going to, and present continuous",
+        "Exercise": "Plan a future event and describe it using different future forms."
+      },
+      "UpperIntermediate": {
+        "Explanation": "Perfect Tenses - Present Perfect Continuous and Past Perfect",
+        "Exercise": "Describe an ongoing action in the past and its relevance to the present."
+      },
+      "Advanced": {
+        "Explanation": "Conditional Sentences - Zero, First, Second, Third Conditionals",
+        "Exercise": "Write conditional sentences to express different situations."
+      },
+      "Proficient": {
+        "Explanation": "Mixed Conditionals and Wish/If only sentences",
+        "Exercise": "Express regrets and hypothetical situations using mixed conditionals and wish/if only constructions."
+      }
+    },
+    "VerbForms": {
+      "Beginner": {
+        "Explanation": "Base form, Past Simple, and -ing form",
+        "Exercise": "Create sentences using verbs in different forms."
+      },
+      "Elementary": {
+        "Explanation": "Irregular Verbs",
+        "Exercise": "Fill in the blanks with the correct form of the irregular verbs."
+      },
+      "Intermediate": {
+        "Explanation": "Modals for possibility and permission",
+        "Exercise": "Express possibility and ask for permission using modal verbs."
+      },
+      "UpperIntermediate": {
+        "Explanation": "Passive Voice",
+        "Exercise": "Rewrite active sentences in passive voice."
+      },
+      "Advanced": {
+        "Explanation": "Reported Speech",
+        "Exercise": "Convert direct speech into reported speech."
+      },
+      "Proficient": {
+        "Explanation": "Subjunctive Mood",
+        "Exercise": "Use the subjunctive mood to express wishes, demands, and suggestions."
+      }
+    }
+  },
+  "travelResourcesForLearningStyles": {
+    "Visual": {
+      "InteractiveMaps": "Use Google Earth or virtual museum tours to visually explore new destinations.",
+      "InfographicsAndPhotoJournals": "Find travel infographics and photo journals on Pinterest or Instagram."
+    },
+    "Auditory": {
+      "TravelPodcastsAndAudiobooks": "Listen to travel podcasts and audiobooks on Spotify or Audible.",
+      "LanguageLearningApps": "Use Duolingo or Rosetta Stone for auditory language learning."
+    },
+    "ReadAndWrite": {
+      "TravelBlogsAndEBooks": "Read detailed guides and personal travel experiences on travel blogs. Find eBooks about travel on Kindle.",
+      "TravelForums": "Engage in travel forums like TripAdvisor or Lonely Planet to share knowledge and experiences."
+    },
+    "Kinesthetic": {
+      "InteractiveLanguageLearning": "Learn new languages through interactive apps like Memrise, simulating real-life conversations.",
+      "DIYTravelPlanningTools": "Plan trips interactively with Roadtrippers or Google Trips, and explore cooking through YouTube tutorials."
+    }
+  },
+  "users": [
+    {
+      "name": "Inoussa",
+      "password": "pass123",
+      "countryofOrigin": "Burkina Faso",
+      "languagesSpoken": ["Mooré", "English", "French", "Japanese", "German", "Dioula"],
+      "major": "Educational Studies",
+      "specialization": "Language education, educational technology",
+      "classes": ["TEAC859", "TEAC995A", "TEAC882B"],
+      "lastName": "Malgoubri",
+      "graduationYear": 2025
+    },
+    {
+      "name": "Fall",
+      "password": "pass123",
+      "countryofOrigin": "Senegal",
+      "languagesSpoken": ["Wolof", "English", "French"],
+      "major": "Educational Studies",
+      "specialization": "language education",
+      "classes": ["TEAC813K", "TEAC882B"]
+    },
+    {
+      "name": "Jack",
+      "password": "pass123",
+      "countryofOrigin": "United States",
+      "languagesSpoken": ["English"],
+      "major": "Educational Studies",
+      "specialization": "Special Education, Educational Technology",
+      "classes": ["TEAC859", "TEAC882D", "TEAC882B"]
+    },
+    {
+      "name": "Alima",
+      "password": "pass123",
+      "countryofOrigin": "Iran",
+      "languagesSpoken": ["Persian", "Arabic", "English", "German", "Spanish"],
+      "major": "Educational Studies",
+      "specialization": "Educational Technology",
+      "classes": ["TEAC882D", "TEAC882B"]
+    },
+    {
+      "name": "Moussa",
+      "password": "pass123",
+      "countryofOrigin": "Russia",
+      "languagesSpoken": ["Russian", "English"],
+      "major": "educational studies",
+      "specialization": "language education",
+      "classes": ["TEAC859", "TEAC882B"]
+    },
+    {
+      "name": "Sydney",
+      "password": "pass123",
+      "countryofOrigin": "United States",
+      "languagesSpoken": ["English"],
+      "major": "Mathematics",
+      "specialization": "Mathematics Education",
+      "classes": ["MATH999", "TEAC882B"]
+    },
+    {
+      "name": "Michel",
+      "password": "pass123",
+      "countryofOrigin": "United States",
+      "languagesSpoken": ["English", "Spanish"],
+      "major": "Educational Studies",
+      "specialization": "Language Education, Educational Technology",
+      "classes": ["MODL999", "TEAC882B"]
+    }
+  ],
+  "entities": [
+    "882 B class",
+    "Dr Olmanson",
+    "Justin",
+    "Inoussa",
+    "Azadeh",
+    "Olmanson",
+    "Ben"
+  ]
+}

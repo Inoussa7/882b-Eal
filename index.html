@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="./langApp/ealStyles.css">
+<script src="./langApp/myEal.js"></script> 
+<title>EAL Learning App</title>
+</head>
+<body>
+<!-- Login Form -->
+<form id="loginForm">
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username"><br>
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password"><br>
+  <button type="submit" id="loginSubmitButton">Login</button>
+  <p id="loginError" style="color: red;"></p>
+</form>
+
+<button id="signUpButton">Sign Up</button>
+
+<!-- Sign-Up Form (initially hidden) -->
+<form id="signUpForm" style="display: none;">
+    <h2>Sign Up Form</h2>
+    <!-- Country Drop-Down -->
+    <label for="countryDropdown">Country:</label>
+    <select id="countryDropdown" name="countryofOrigin">
+     
+    </select><br>
+
+    <!-- Text Inputs for Other Information -->
+    <label for="username">Name:</label>
+    <input type="text" id="nameInput" name="name"><br>
+    <label for="passwordInput">Password:</label>
+    <input type="password" id="passwordInput" name="password" required><br>
+
+    <label for="languagesSpokenInput">Languages Spoken:</label>
+    <input type="text" id="languagesSpokenInput" name="languagesSpoken"><br>
+
+    <label for="majorInput">Major:</label>
+    <input type="text" id="majorInput" name="major"><br>
+
+    <label for="specializationInput">Specialization:</label>
+    <input type="text" id="specializationInput" name="specialization"><br>
+
+    <label for="classesInput">Classes:</label>
+    <input type="text" id="classesInput" name="classes"><br>
+
+    <button id="submitButton" type="submit">Submit</button>
+  </form>
+
+<h2>Learning Content Form</h2>
+<form id="learningForm">
+    <label for="learningStyle">Select your learning style:</label>
+    <select name="learningStyle" id="learningStyle"></select>
+
+    <label for="proficiencyLevel">Select your proficiency level:</label>
+    <select name="proficiencyLevel" id="proficiencyLevel"></select>
+
+    <input type="submit" value="Submit">
+</form>
+
+<div id="results">
+
+</div>
+
+  <h1>Language Learning Tasks</h1>
+  <div id="lessons"></div>
+
+<h2>User Profiles</h2>
+
+<div id="userCards" class="card-grid">
+   
+</div>
+
+<h2>Your Affirmation</h2>
+<div id="affirmationContainer"></div>
+
+
+<!--include jquery & backstretch-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.backstretch.min.js"></script>
+<script type="text/javascript">
+	$.backstretch("bg.jpg", {speed: 150});
+</script>
+ 
+</body>
+</html>
+
+
