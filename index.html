@@ -6,12 +6,30 @@
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" type="text/css" href="ealStyles.css">
-<script src="./myEal.js"></script> 
-<title>EAL Learning App</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" type="text/css" href="eaL.css">
+<script src="eaL.js"></script> 
+<title>Trilingual Learning App</title>
 </head>
+
+ <header>
+    <div class="container">
+      <h1>Welcome to TEAC 882B</h1>
+      <h2>Database and Interactive Web Development</h2>
+      <h2>Trilingual Learning App</h2>
+    </div>
+  </header>
+
 <body>
+<!-- Navigation Menu -->
+<nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#signUpForm">Sign Up</a></li>
+      <li><a href="#loginForm">Login</a></li>
+      <li><a href="javascript:fetchAndDisplayStatistics()">View Statistics</a></li>
+    </ul>
+  </nav>
 <!-- Login Form -->
 <form id="loginForm">
   <label for="username">Username:</label>
@@ -86,7 +104,7 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript" src="jquery.backstretch.min.js"></script>
 <script type="text/javascript">
-	$.backstretch("bg.jpg", {speed: 150});
+	$.backstretch("cpeh.jpg", {speed: 150});
 </script>
  
 </body>

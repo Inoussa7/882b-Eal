@@ -1,0 +1,193 @@
+:root {
+    --primary-color: #006994;
+    --secondary-color: #339933;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --card-background-color: #fff;
+    --card-header-color: #e8cbc1;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+  }
+  
+  body {
+    font-family: 'Lato', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    padding: 20px;
+    height: 100vh;
+  }
+  
+  nav {
+    background-color: var(--primary-color);
+    padding: 10px;
+    margin-bottom: 30px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  nav ul li a:hover {
+    background-color: #005c7f;
+  }
+  
+  #loginSubmitButton,
+  #signUpButton {
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #signUpButton:hover,
+  #loginSubmitButton:hover {
+    background-color: #0056b3;
+  }
+  
+  #signUpButton {
+    display: block;
+    margin: 30px auto 0;
+    padding: 10px 20px;
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  h1,
+  h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: block;
+  }
+  
+  form {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: var(--card-background-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+  
+  select,
+  input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  input[type="submit"] {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #005200;
+  }
+  
+  #results {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #c0c0c0;
+    color: #000;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+  
+  .card {
+    background-color: var(--card-background-color);
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .card-header {
+    background-color: var(--card-header-color);
+    color: white;
+    padding: 1rem;
+    font-size: 1.25rem;
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+    flex-grow: 1;
+  }
+  
+  .card-body p {
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+  }
+  
+  #affirmationContainer {
+    background-color: #808080;
+    color: white;
+    padding: 30px;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+  }
+  
+  #affirmationContainer p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: white;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .card-grid {
+      grid-template-columns: 1fr;
+    }
+  }
