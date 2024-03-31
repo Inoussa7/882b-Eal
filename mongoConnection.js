@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+const uri = "mongodb+srv://<imalgoubri2>:<Ilovedatabases>@cluster0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
 app.get('/data', async (req, res) => {
   try {
     await client.connect();
