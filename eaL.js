@@ -211,14 +211,3 @@ function setupFormToggles() {
         loginForm.style.display = 'none'; // Hide login form
     });
 }
-
-function fetchAndDisplayContent() {
-    fetch('http://localhost:3000/data')
-      .then(response => response.json())
-      .then(data => {
-        // Select the div and insert the data into it
-        const contentDiv = document.getElementById('content');
-        contentDiv.innerHTML = JSON.stringify(data, null, 2);
-      })
-      .catch(error => console.error(error));
-  }
