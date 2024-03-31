@@ -7,13 +7,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<<<<<<< HEAD
-<link rel="icon" type="image/x-icon" href="./IM-logo.ico">
-=======
-<link rel="icon" type="image/ico" href="./IM-logo.ico">
->>>>>>> b4deb1a (git commit -m "update the index.html file")
 <link rel="stylesheet" type="text/css" href="eaL.css">
-<script src="./eaL.js"></script> 
+<link rel="icon" type="image/ico" href="./IM-logo.ico">
+<script src="eaL.js"></script> 
 <title>Trilingual Learning App</title>
 </head>
 
@@ -29,64 +25,78 @@
 <!-- Navigation Menu -->
 <nav>
     <ul>
-      <li><a href="#Home"></a></li>
+      <li><a href="#">Home</a></li>
       <li><a href="#signUpForm">Sign Up</a></li>
       <li><a href="#loginForm">Login</a></li>
       <li><a href="javascript:fetchAndDisplayStatistics()">View Statistics</a></li>
     </ul>
   </nav>
-<!-- Login Form -->
-<form id="loginForm">
-  <label for="username">Username:</label>
-  <input type="text" id="username" name="username"><br>
-  <label for="password">Password:</label>
-  <input type="password" id="password" name="password"><br>
-  <button type="submit" id="loginSubmitButton">Login</button>
-  <p id="loginError" style="color: red;"></p>
-</form>
 
-<button id="signUpButton">Sign Up</button>
+<!-- Login Form -->
+  <div id="loginForm" style="display: none;">
+  <form action="/process" method="post">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username"><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password"><br>
+      <button type="submit" id="loginSubmitButton">Login</button>
+      <p id="loginError" style="color: red;"></p>
+    </form>
+  </div>
 
 <!-- Sign-Up Form (initially hidden) -->
-<form id="signUpForm" style="display: none;">
-    <h2>Sign Up Form</h2>
-    <!-- Country Drop-Down -->
-    <label for="countryDropdown">Country:</label>
-    <select id="countryDropdown" name="countryofOrigin">
-     
-    </select><br>
+<div id="signUpForm" style="display: none;">
+   <form action="/process" method="post">
+<h2>Sign Up Form</h2>
 
-    <!-- Text Inputs for Other Information -->
-    <label for="username">Name:</label>
-    <input type="text" id="nameInput" name="name"><br>
-    <label for="passwordInput">Password:</label>
-    <input type="password" id="passwordInput" name="password" required><br>
-
-    <label for="languagesSpokenInput">Languages Spoken:</label>
-    <input type="text" id="languagesSpokenInput" name="languagesSpoken"><br>
-
-    <label for="majorInput">Major:</label>
-    <input type="text" id="majorInput" name="major"><br>
-
-    <label for="specializationInput">Specialization:</label>
-    <input type="text" id="specializationInput" name="specialization"><br>
-
-    <label for="classesInput">Classes:</label>
-    <input type="text" id="classesInput" name="classes"><br>
-
-    <button id="submitButton" type="submit">Submit</button>
+  
+  <!-- Country Drop-Down -->
+  <label for="countryDropdown">Country:</label>
+  <select id="countryDropdown" name="countryofOrigin">
+  </select><br>
+  
+  <!-- Text Inputs for Other Information -->
+  <label for="username">Name:</label>
+  <input type="text" id="nameInput" name="name"><br>
+  
+  <label for="passwordInput">Password:</label>
+  <input type="password" id="passwordInput" name="password" required><br>
+  
+  <label for="languagesSpokenInput">Languages Spoken:</label>
+  <input type="text" id="languagesSpokenInput" name="languagesSpoken"><br>
+  
+  <label for="majorInput">Major:</label>
+  <input type="text" id="majorInput" name="major"><br>
+  
+  <label for="specializationInput">Specialization:</label>
+  <input type="text" id="specializationInput" name="specialization"><br>
+  
+  <label for="classesInput">Classes:</label>
+  <input type="text" id="classesInput" name="classes"><br>
+  
+  <!-- Proficiency Level Drop-Down -->
+  <label for="proficiencyLevelDropdown">Proficiency Level:</label>
+  <select id="proficiencyLevelDropdown" name="proficiencyLevel">
+    <option value="Beginner">Beginner</option>
+    <option value="Elementary">Elementary</option>
+    <option value="Intermediate">Intermediate</option>
+    <option value="Upper Intermediate">Upper Intermediate</option>
+    <option value="Advanced">Advanced</option>
+    <option value="Proficient">Proficient</option>
+  </select><br>
+  
+  <!-- Learning Style Drop-Down -->
+  <label for="learningStyleDropdown">Learning Style:</label>
+  <select id="learningStyleDropdown" name="learningStyle">
+    <option value="Visual">Visual</option>
+    <option value="Auditory">Auditory</option>
+    <option value="ReadAndWrite">Read and Write</option>
+    <option value="Kinesthetic">Kinesthetic</option>
+  </select><br>
+ <button id="submitButton" type="submit">Submit</button>
   </form>
+</div>
 
-<h2>Learning Content Form</h2>
-<form id="learningForm">
-    <label for="learningStyle">Select your learning style:</label>
-    <select name="learningStyle" id="learningStyle"></select>
-
-    <label for="proficiencyLevel">Select your proficiency level:</label>
-    <select name="proficiencyLevel" id="proficiencyLevel"></select>
-
-    <input type="submit" value="Submit">
-</form>
 
 <div id="results">
 
@@ -102,11 +112,42 @@
 </div>
 
 
+<!-- Statistics Placeholder -->
+  <h2>Statistics</h2>
+  <div id="statisticsContainer">
+    <p>Loading statistics...</p>
+  </div>
+
+
 <!--include jquery & backstretch-->
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript" src="jquery.backstretch.min.js"></script>
 <script type="text/javascript">
-	$.backstretch("cpeh.jpg", {speed: 150});
+    $.backstretch("cpeh.jpg", {speed: 150});
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="jquery.backstretch.min.js"></script>
+  <script type="text/javascript">
+    $.backstretch("cpeh.jpg", {speed: 150});
+
+    // Function to fetch and display statistics
+    function fetchAndDisplayStatistics() {
+      $.get('/routes/statistics', function(data) {
+        // Clear loading message
+        $('#statisticsContainer').empty();
+        // Process fetched data and update HTML
+        data.forEach(function(user) {
+          $('#statisticsContainer').append(`<p>${user.name}: ${user.Country_of_Origin}, ${user.Proficiency_level}, ${user.LearningStyle}</p>`);
+        });
+      });
+    }
+
+    // Event listener to fetch and display statistics when View Statistics link is clicked
+    $(document).ready(function() {
+      $('#viewStatistics').on('click', function() {
+        fetchAndDisplayStatistics();
+      });
+    });
 </script>
  
 </body>
