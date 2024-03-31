@@ -211,3 +211,4 @@ function setupFormToggles() {
         loginForm.style.display = 'none'; // Hide login form
     });
 }
+
