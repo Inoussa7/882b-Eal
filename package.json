@@ -1,13 +1,3 @@
-package name: (882b-midterm) [Press Enter or type a new name]
-version: (1.0.0) 
-description: A Node.js project for 882b Midterm
-entry point: (index.js) 
-test command: 
-git repository: 
-keywords: nodejs midterm project
-author: Inoussam
-license: (ISC) [Press Enter or specify a different license]
-About to write to /path/to/your/project/882b-Midterm/package.json:
 
 {
   "name": "882b-midterm",
