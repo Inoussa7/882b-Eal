@@ -1,22 +1,12 @@
 {
   "name": "882b-midterm",
   "version": "1.0.0",
-  "description": "A Node.js project for 882b Midterm",
+  "description": "Your project description",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
-  }  
-  "author": "Inoussam",
-  "license": "ISC",
-  "keywords": [
-    "nodejs",
-    "midterm",
-    "project"
-  ],
-  "dependencies": {
-    "express": "^4.19.2"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "devDependencies": {
-    "jest": "^29.7.0"
-  }
+  "author": "",
+  "license": "ISC"
 }
