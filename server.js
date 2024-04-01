@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-const { client, connectToDatabase } = require('./database');
+const { client, connectToDatabase } = require('./dataConnection');
 
 // Connect to MongoDB
 connectToDatabase();
