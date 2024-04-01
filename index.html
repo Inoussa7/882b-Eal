@@ -126,27 +126,7 @@
   <script type="text/javascript">
     $.backstretch("cpeh.jpg", {speed: 150});
 
-    // Function to fetch and display statistics
-    function fetchAndDisplaycontent() {
-      $.get('/routes/content', function(data) {
-        // Clear loading message
-        $('#content').empty();
-        // Process fetched data and update HTML
-        data.forEach(function(user) {
-          $('#content').append(`<p>${user.name}: ${user.Country_of_Origin}, ${user.Proficiency_level}, ${user.LearningStyle}</p>`);
-        });
-      });
-    }
-
-    // Event listener to fetch and display statistics when View Statistics link is clicked
-    $(document).ready(function() {
-      $('#viewStatistics').on('click', function() {
-        fetchAndDisplaycontent();
-      });
-    });
 </script>
  
 </body>
 </html>
-
-
