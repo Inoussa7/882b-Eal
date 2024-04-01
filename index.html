@@ -113,8 +113,23 @@
 
 <!-- Content Placeholder -->
   <h2>Learning Content</h2>
-  <div id="content">
-    <p>Content loading...</p>
+  <div id="content"></div>
+
+  <script>
+    fetch('/data')
+      .then(response => response.json())
+      .then(data => {
+        const contentElement = document.getElementById('content');
+        data.forEach(item => {
+          const paragraph = document.createElement('p');
+          paragraph.textContent = JSON.stringify(item);
+          contentElement.appendChild(paragraph);
+        });
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  </script>
   </div>
 
 
