@@ -166,7 +166,7 @@ function setupViewButtonListener() {
 }
 
 function fetchAndDisplayContent() {
-  fetch('/data')
+  fetch('/api/content')
     .then(response => {
       if (!response.ok) throw new Error('Network response was not ok');
       return response.json();
@@ -174,13 +174,51 @@ function fetchAndDisplayContent() {
     .then(data => {
       const contentElement = document.getElementById('content');
       contentElement.innerHTML = '';
-      data.forEach(item => {
-        const paragraph = document.createElement('p');
-        paragraph.textContent = JSON.stringify(item);
-        contentElement.appendChild(paragraph);
+
+      // Display lessons
+      const lessonsHeading = document.createElement('h3');
+      lessonsHeading.textContent = 'Lessons:';
+      contentElement.appendChild(lessonsHeading);
+
+      data.lessons.forEach(lesson => {
+        const lessonElement = document.createElement('div');
+        lessonElement.innerHTML = `
+          <h4>${lesson.topic}</h4>
+          <p>Proficiency Levels:</p>
+          <ul>
+            ${lesson.proficiencyLevels.map(level => `
+              <li>
+                <strong>${level.level}</strong>
+                <p>${level.overview}</p>
+                <p>Grammar: ${level.grammar.title}</p>
+                <p>Vocabulary: ${level.vocabulary.title}</p>
+              </li>
+            `).join('')}
+          </ul>
+        `;
+        contentElement.appendChild(lessonElement);
+      });
+
+      // Display users
+      const usersHeading = document.createElement('h3');
+      usersHeading.textContent = 'Users:';
+      contentElement.appendChild(usersHeading);
+
+      data.users.forEach(user => {
+        const userElement = document.createElement('div');
+        userElement.innerHTML = `
+          <p><strong>Name:</strong> ${user.name}</p>
+          <p><strong>Country of Origin:</strong> ${user.countryofOrigin}</p>
+          <p><strong>Languages Spoken:</strong> ${user.languagesSpoken.join(', ')}</p>
+          <p><strong>Major:</strong> ${user.major}</p>
+          <p><strong>Specialization:</strong> ${user.specialization}</p>
+          <p><strong>Classes:</strong> ${user.classes.join(', ')}</p>
+        `;
+        contentElement.appendChild(userElement);
       });
     })
     .catch(error => {
       console.error('Error fetching content:', error);
+      document.getElementById('content').innerHTML = 'An error occurred. Please try again later.';
     });
 }
