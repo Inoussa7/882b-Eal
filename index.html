@@ -26,9 +26,9 @@
 <nav>
     <ul>
       <li><a href="#Home"></a></a></li>
-      <li><a href="#signUpForm">Sign Up</a></li>
       <li><a href="#loginForm">Login</a></li>
-      <li><a href="javascript:fetchAndDisplaycontent()">View</a></li>
+      <li><a href="#signUpForm">Sign Up</a></li>
+      <li><a id="viewContent">View</a></li>
     </ul>
   </nav>
 
@@ -108,14 +108,27 @@
    
 </div>
 
-<h2>Your Affirmation</h2>
-<div id="affirmationContainer"></div>
-
 <!-- Content Placeholder -->
   <h2>Learning Content</h2>
-  <div id="content">
-    <p>Content loading...</p>
-  </div>
+    <div id="content"></div>
+
+    <script>
+      fetch('/data')
+        .then(response => response.json())
+        .then(data => {
+          const contentElement = document.getElementById('content');
+          data.forEach(item => {
+            const paragraph = document.createElement('p');
+            paragraph.textContent = JSON.stringify(item);
+            contentElement.appendChild(paragraph);
+          });
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    </script>
+  
+  
 
 
 <!--include jquery & backstretch-->

@@ -1,35 +1,49 @@
 const express = require('express');
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const client = require('./databaseConnection');
 
 const app = express();
 const port = 3000;
 
-const uri = "mongodb+srv://imalgoubri2:<Ilovedatabases#>@cluster0.et25buk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  }
-});
-
-app.get('/data', async (req, res) => {
+app.get('/api/data', async (req, res) => {
   try {
     await client.connect();
     const database = client.db('eaLdata');
-    const collection = database.collection('Lessons');
-    const data = await collection.find().toArray();
-    res.json(data);
+    const languageLearningContent = await database.collection('languageLearningContent').find().toArray();
+    const grammarLearningContent = await database.collection('grammarLearningContent').find().toArray();
+    const learningStyles = await database.collection('learningStyles').find().toArray();
+    const travelResourcesForLearningStyles = await database.collection('travelResourcesForLearningStyles').find().toArray();
+    const proficiencyLevels = await database.collection('proficiencyLevels').find().toArray();
+
+    res.json({
+      languageLearningContent,
+      grammarLearningContent,
+      learningStyles,
+      travelResourcesForLearningStyles,
+      proficiencyLevels,
+    });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'An error occurred' });
+    console.error('Error fetching data from the database:', error);
+    res.status(500).json({ error: 'Internal server error' });
   } finally {
     await client.close();
   }
 });
 
-app.use(express.static('public'));
+app.get('/api/content', async (req, res) => {
+  try {
+    await client.connect();
+    const database = client.db('eaLdata');
+    const lessons = await database.collection('Lessons').find().toArray();
+    const users = await database.collection('users').find().toArray();
+
+    res.json({ lessons, users });
+  } catch (error) {
+    console.error('Error fetching content from the database:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  } finally {
+    await client.close();
+  }
+});
 
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
