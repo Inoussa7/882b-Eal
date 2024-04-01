@@ -110,24 +110,72 @@
 </div>
 
 <!-- Content Placeholder -->
-  <h2>Learning Content</h2>
-    <div id="content"></div>
+<h2>Learning Content</h2>
+<div id="content"></div>
 
-    <script>
-      fetch('/data')
-        .then(response => response.json())
-        .then(data => {
-          const contentElement = document.getElementById('content');
-          data.forEach(item => {
-            const paragraph = document.createElement('p');
-            paragraph.textContent = JSON.stringify(item);
-            contentElement.appendChild(paragraph);
-          });
-        })
-        .catch(error => {
-          console.error('Error:', error);
-        });
-    </script>
+<script>
+  async function fetchAndDisplayContent() {
+    try {
+      const lessonsResponse = await fetch('/api/content');
+      if (!lessonsResponse.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const { lessons } = await lessonsResponse.json();
+
+      const contentElement = document.getElementById('content');
+      contentElement.innerHTML = '';
+
+      // Display lessons
+      const lessonsHeading = document.createElement('h3');
+      lessonsHeading.textContent = 'Lessons:';
+      contentElement.appendChild(lessonsHeading);
+
+      lessons.forEach(lesson => {
+        const lessonElement = document.createElement('div');
+        lessonElement.innerHTML = `
+          <h4>${lesson.topic}</h4>
+          <p>Proficiency Levels:</p>
+          <ul>
+            ${lesson.proficiencyLevels.map(level => `
+              <li>
+                <strong>${level.level}</strong>
+                <p>${level.overview}</p>
+                <p>Grammar: ${level.grammar.title}</p>
+                <p>Vocabulary: ${level.vocabulary.title}</p>
+              </li>
+            `).join('')}
+          </ul>
+        `;
+        contentElement.appendChild(lessonElement);
+      });
+
+      // Display users from eaL.json
+      const usersHeading = document.createElement('h3');
+      usersHeading.textContent = 'Users:';
+      contentElement.appendChild(usersHeading);
+
+      userProfiles.forEach(user => {
+        const userElement = document.createElement('div');
+        userElement.innerHTML = `
+          <p><strong>Name:</strong> ${user.name}</p>
+          <p><strong>Country of Origin:</strong> ${user.countryofOrigin}</p>
+          <p><strong>Languages Spoken:</strong> ${user.languagesSpoken.join(', ')}</p>
+          <p><strong>Major:</strong> ${user.major}</p>
+          <p><strong>Specialization:</strong> ${user.specialization}</p>
+          <p><strong>Classes:</strong> ${user.classes.join(', ')}</p>
+        `;
+        contentElement.appendChild(userElement);
+      });
+    } catch (error) {
+      console.error('Error fetching content:', error);
+      document.getElementById('content').innerHTML = 'An error occurred. Please try again later.';
+    }
+  }
+
+  // Call the function to fetch and display content
+  fetchAndDisplayContent();
+</script>
   
   
 
