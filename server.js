@@ -1,5 +1,5 @@
 const express = require('express');
-const client = require('./databaseConnection');
+const client = require('./dataConnection');
 
 const app = express();
 const port = 3000;
